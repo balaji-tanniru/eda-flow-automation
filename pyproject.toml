@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eda-flow-automation"
+version = "1.0.0"
+description = "Python and Tcl automation for a reproducible RTL synthesis flow"
+requires-python = ">=3.10"
+dependencies = ["PyYAML==6.0.3"]
+
+[project.scripts]
+eda-flow = "edaflow.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+

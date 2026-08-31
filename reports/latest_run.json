@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "design": "parameterized_event_counter",
+  "top": "event_counter",
+  "tool": "Yosys 0.52",
+  "elapsed_seconds": 0.138305,
+  "statistics": {
+    "wires": 17,
+    "wire_bits": 118,
+    "public_wires": 6,
+    "public_wire_bits": 21,
+    "memories": 0,
+    "cells": 94
+  },
+  "outputs": {
+    "netlist": "netlist.v",
+    "statistics": "stats.json",
+    "log": "synthesis.log",
+    "summary": "summary.md"
+  }
+}

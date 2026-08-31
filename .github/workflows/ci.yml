@@ -1,0 +1,39 @@
+name: EDA Flow CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-and-synthesize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Yosys and Python packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yosys
+          python -m pip install -r requirements-dev.txt
+
+      - name: Run unit tests
+        run: python -m pytest
+
+      - name: Validate configuration
+        run: python -m edaflow validate configs/counter.yaml
+
+      - name: Run synthesis flow
+        run: python -m edaflow run configs/counter.yaml
+
+      - name: Upload synthesis proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-counter-synthesis-results
+          path: build/event_counter/
+

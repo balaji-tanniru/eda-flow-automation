@@ -1,0 +1,10 @@
+design:
+  name: parameterized_event_counter
+  top: event_counter
+  sources:
+    - rtl/event_counter.sv
+
+flow:
+  output_dir: build/event_counter
+  flatten: true
+
