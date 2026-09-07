@@ -19,8 +19,11 @@ jobs:
       - name: Install Yosys and Python packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y yosys
+          sudo apt-get install -y yosys verilator
           python -m pip install -r requirements-dev.txt
+
+      - name: Lint RTL
+        run: verilator --lint-only -Wall -Wno-fatal rtl/*.sv
 
       - name: Run unit tests
         run: python -m pytest

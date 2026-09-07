@@ -1,3 +1,13 @@
+# EDA Flow Automation
+
+## Verification status
+
+`PYTHONPATH=. python -m pytest -q` was executed in this repair environment and completed with 10 passing tests. Yosys synthesis and Verilator lint were not executed here because those tools were not installed in this environment.
+
+## Repository
+
+This repository contains the RTL/testbench/automation sources for the project. Review fixes are summarized in the package-level `CHANGES.md`.
+
 # Python/Tcl EDA Flow Automation
 
 [![EDA Flow CI](https://github.com/balaji-tanniru/eda-flow-automation/actions/workflows/ci.yml/badge.svg)](https://github.com/balaji-tanniru/eda-flow-automation/actions/workflows/ci.yml)
